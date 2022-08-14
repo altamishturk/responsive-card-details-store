@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,200;1,300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --card-img-width: 27.9rem;
+    --card-img-height: 15rem;
+    --card-margin: 1.8rem;
+    --primary-clr: #53233A;
+}
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.hide{
+    display: none !important;
+}
+
+.container{
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.card{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.card-left{
+    width: 30%;
+    background-image: url("../images/bg-main-desktop.png");
+}
+
+.card-back,
+.card-front{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+}
+
+.card-front {
+    top: 20%;
+    left: 10%;
+}
+
+.card-back {
+    top: 25%;
+    left: 35%;
+}
+
+
+.card-back span,
+.card-front span{
+    position: absolute;
+    color: white;
+    text-transform: uppercase;
+}
+
+.card-front .big-circle{
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    border-radius: 50%;
+    left: var(--card-margin);
+    top: var(--card-margin);
+}
+
+.card-front .small-circle{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    left: calc(var(--card-margin) + 3.7rem);
+    top: calc(var(--card-margin) + 1rem);
+    border: 1px solid white;
+}
+
+.card-front .card-number{
+    left: var(--card-margin);
+    bottom: calc(var(--card-margin) + 2.6rem);
+    font-size: 2.5rem;
+}
+
+.card-front .accountholder-name{
+    left: var(--card-margin);
+    bottom: var(--card-margin);
+}
+
+.card-front .exp-date{
+    right: var(--card-margin);
+    bottom: var(--card-margin);
+}
+
+.card-back .cvc {
+    top: 7rem;
+    right: 3.1rem;
+    color: white;
+}
+
+
+
+.card-right{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.thank-you,
+.card-form {
+    width: 35%;
+    margin-right: 6.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+form label {
+    text-transform: uppercase;
+    padding-bottom: 3px;
+    columns: var(--primary-clr);
+}
+
+form .error-box{
+    color: red;
+    margin-bottom: 5px;
+}
+
+form input{
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    border: 1px solid var(--primary-clr);
+}
+
+form input.error{
+    border: 1px solid red;
+}
+
+button[type="submit"]{
+    width: 100%;
+    padding: 12px 10px;
+    background-color: var(--primary-clr);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.expcvc-container{
+    display: flex;
+    gap: 10px;
+}
+
+.expcvc-container > .expiryDate-container{
+    width: 50%;
+}
+
+.expcvc-container > .cvc-container{
+    width: 47%;
+}
+
+.expiryDate-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.expiryDate-container > div{
+    display: flex;
+    gap: 5px;
+}
+
+.expiryDate-container > div > input {
+  width: 50%;
+}
+
+.thank-you {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thank-you .icon {
+    width: 60px;
+    height: 60%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: end;
+}
+
+.thank-you .icon img{
+    width: 100%;
+    height: 100%;
+}
+
+.thank-you h2{
+    font-size: 30px;
+    text-transform: capitalize;
+    color: var(--primary-clr);
+    margin-bottom: 6px;
+}
+
+.thank-you p{
+    color: rgb(83, 83, 83);
+    margin-bottom: 20px;
+}
+
+.thank-you button {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    background-color: var(--primary-clr);
+    color: white;
+}
+
+.attribution {
+    display: block !important;
+    position: static !important;
+    margin-top: 60px;
+}
+
+@media only screen and (max-width: 1150px){
+
+    .card-left {
+        width: 100%;
+        background-color: var(--primary-clr);
+        background-image: none;
+    }
+
+    .card-right{
+        width: 100%;
+        justify-content: center;
+        padding: 50px 0px;
+    }
+
+	.card{
+        flex-direction: column;
+    }
+
+    .card-front {
+        top: 10%;
+        left: calc(50% - 13.7rem);
+        z-index: 10;
+    }
+
+    .card-back {
+        top: -7%;
+        left: 30%;
+        z-index: 0;
+    }
+
+    .thank-you, .card-form{
+        margin-right: 0px;
+    }
+}
+
+
+@media only screen and (max-width: 800px){
+
+    html {
+        font-size: 80%;
+    }
+
+    .card-left {
+        width: 100%;
+        background-image: url('../images/bg-main-mobile.png');
+    }
+
+    .card-form{
+        width: 80%;
+    }
+
+    .card-front {
+        top: 10%;
+        left: calc(50% - 13.7rem);
+        z-index: 10;
+        width: 60%;
+    }
+
+    .card-back img,
+    .card-front img{
+        width: -webkit-fill-available;
+    }
+
+    .card-back {
+        top: -7%;
+        left: 30%;
+        z-index: 0;
+        width: 60%;
+    }
+
+    .thank-you {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+
+    html {
+        font-size: 50%;
+    }
+
+    .card-back .cvc {
+        top: 6rem;
+    }
+
+}
+
